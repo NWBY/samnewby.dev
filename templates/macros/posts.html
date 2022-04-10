@@ -1,0 +1,13 @@
+{% macro tags(tags) %}
+<div>
+    {% for tag in tags %}
+        <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="underline inline-block mx-1 text-teal-600">#{{ tag }}</a>
+    {% endfor %}
+</div>
+{% endmacro tags %}
+
+{% macro date(date) %}
+<div>
+    <p class="text-teal-600">{{ date | date(format="%Y.%m.%d") }}</p>
+</div>
+{% endmacro date %}

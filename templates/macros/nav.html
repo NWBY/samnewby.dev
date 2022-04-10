@@ -1,0 +1,23 @@
+{% macro header() %}
+<div class="w-full pt-5 md:pt-20">
+    <div class="flex items-center justify-between mb-5">
+        <h1 class="text-4xl font-black text-slate-900 font-sans subpixel-antialiased">
+            <a href="{{ config.base_url }}">{{ config.title }}</a>
+        </h1>
+        {{ nav::nav() }}
+    </div>
+    <p class="text-lg font-light text-slate-800">Full-Stack Software Engineer at Tails.com from the UK.</p>
+</div>
+{% endmacro header %}
+
+{% macro nav() %}
+<div>
+    <div id="navigation">
+        {% if config.extra.nav %}
+        {% for navItem in config.extra.nav %}
+        <a href="{{ get_url(path=navItem.url) }}" class="text-teal-400 underline">{{ navItem.name }}</a>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endmacro nav %}

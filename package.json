@@ -1,0 +1,19 @@
+{
+  "name": "samnewby.dev",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build styles/styles.css --dist-dir static --no-source-maps",
+    "watch": "parcel watch styles/styles.css --dist-dir static --no-hmr --no-source-maps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "parcel": "^2.4.1",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23"
+  }
+}

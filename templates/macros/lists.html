@@ -1,0 +1,23 @@
+{% import "macros/posts.html" as posts %}
+
+{% macro list_pages() %}
+<section class="py-5">
+    {% for page in paginator.pages %}
+    <div class="border-b-2 border-teal-400 pb-2">
+        <h1 class="text-2xl font-semibold text-slate-700 mb-2 hover:text-teal-400">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h1>
+        <div class="mb-2 flex items-center">
+            {{ posts::date(date=page.date) }}
+            <p class="mx-4">||</p>
+            {{ posts::tags(tags=page.taxonomies.tags) }}
+        </div>
+        <div>
+            <p class="text-sm font-light text-slate-600">
+                <a href="{{ page.permalink }}">{{ page.description }}</a>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endmacro list_pages %}

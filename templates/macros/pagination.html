@@ -1,0 +1,22 @@
+{% macro paginate() %}
+<div class="">
+    <div class="">
+        {% if paginator.previous %}
+        <span class="">
+            <a href="{{ paginator.previous }}">
+                <span class="">←</span>
+                <span class="">Newer</span>
+            </a>
+        </span>
+        {%  endif %}
+        {% if paginator.next %}
+        <span class="">
+            <a href="{{ paginator.next }}">
+                <span class="">Older</span>
+                <span class="">→</span>
+            </a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+{% endmacro paginate %}
