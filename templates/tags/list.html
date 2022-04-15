@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{%- block main -%}
+<div class="py-5">
+    <h1 class="text-2xl font-semibold text-slate-800 mb-5">All #tags</h1>
+    <div class="flex">
+        {%- for term in terms -%}
+            <div class="mr-4 inline">
+                <a href="{{ get_taxonomy_url(kind="tags", name=term.name) }}" class="underline text-teal-400">#{{ term.name }}</a>
+                ({{ term.pages | length }} post{{ term.pages | length | pluralize}})
+            </div>
+        {%- endfor -%}
+    </div>
+</div>
+{%- endblock main -%}

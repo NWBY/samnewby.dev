@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% import "macros/posts.html" as posts %}
+
+{% block main %}
+<div class="py-5">
+    <h1 class="text-2xl font-semibold text-slate-800 mb-5">
+        Posts with <span class="text-teal-400">#{{ term.name }}</span> tag
+        ({{ term.pages | length }} post{{ term.pages | length | pluralize}})
+    </h1>
+    <div>
+        {% for post in term.pages %}
+            <div class="border-b-2 border-teal-400 pb-2">
+                <h1 class="text-lg font-semibold text-slate-700 mb-2 hover:text-teal-400">
+                    <a href="{{ post.permalink }}">{{ post.title }}</a>
+                </h1>
+                <div class="mb-2 flex items-center">
+                    {{ posts::date(date=post.date) }}
+                </div>
+                <div>
+                    <p class="text-sm font-light text-slate-600">
+                        <a href="{{ post.permalink }}">{{ post.description }}</a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}
