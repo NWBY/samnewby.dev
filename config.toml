@@ -23,5 +23,5 @@ highlight_theme = "base16-ocean-dark"
 [extra]
 nav = [
     { url="/about/", name="About" },
-#    { url="/projects/", name="Projects" }
+    { url="/projects/", name="Projects" }
 ]
